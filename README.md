@@ -17,7 +17,7 @@ This is a an ML project done and deployed using Flask API
 + pickle
 
 #### Project Structure
-* This project has four major parts :
+ This project has four major parts :
 
 + ipynb- This folder contains code for our Machine Learning model to predict gender based on the dental metrics . We have two versions of the code.
 + templates - This folder contains the HTML template to allow user to enter dental measurements and it will display the predicted Gender.
@@ -25,10 +25,6 @@ This is a an ML project done and deployed using Flask API
 + request.py - This uses requests module to call APIs already defined in app.py and displays the returned value.
 
 > Running the project
-Ensure that you are in the project home directory. Create the machine learning model by running below command -
-`python model.py`
-This would create a serialized version of our model into a file model.pkl
-
 Run app.py using below command to start Flask API
 `python app.py`
 By default, flask will run on port 5000.
@@ -36,9 +32,7 @@ By default, flask will run on port 5000.
 Navigate to URL http://localhost:5000
 You should be able to view the homepage as below : alt text
 
-Enter valid numerical values in all 3 input boxes and hit Predict.
+Enter valid numerical values in all 6 input boxes and hit Predict.This will give you the predicted output 
 
-If everything goes well, you should be able to see the predcited salary vaule on the HTML page! alt text
-
-You can also send direct POST requests to FLask API using Python's inbuilt request module Run the beow command to send the request with some pre-popuated values -
-`python request.py`
+There is also a streamlit app which can be run easily . To run go to terminal and type
+'streamlit streamlit.py`
