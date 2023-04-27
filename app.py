@@ -4,8 +4,10 @@ import pickle
 from flask import Flask,jsonify,render_template
 
 
+
 app =Flask(__name__)
 model=pickle.load(open('rfc_tuned_v2.pkl','rb'))
+
 
 @app.route('/', methods=['GET','POST'])
 def index():
@@ -13,6 +15,7 @@ def index():
 
 @app.route('/predict',methods=['POST'])
 def predict():
+    
     float_features=[float(x) for x in requests.form.values()]
     ''' For rendering results on HTML GUI '''
     final_features=[np.array(float_features)]
@@ -23,7 +26,7 @@ def predict():
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
-    '''For Direct API calls through request'''
+    '''For Direct API calls through requests'''
     data=requests.get_json(force=True)
     prediction=model.predict([np.array(list(data.values))])
 

@@ -20,7 +20,7 @@ st.title('Gender Predictions using Dental Measurements')
 with open('normalized_top6_df.pkl','rb') as file:
     normalized_df=pickle.load(file)
     
-# Load the trained XGBoost model  
+# Load the trained rfc_tuned model (random_forest_classifier) 
 with open('rfc_tuned_v2.pkl','rb') as file:
     rfc_model=pickle.load(file)
     
