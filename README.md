@@ -30,7 +30,7 @@ Run app.py using below command to start Flask API
 By default, flask will run on port 5000.
 
 Navigate to URL http://localhost:5000
-You should be able to view the homepage as below : alt text
+You should be able to view the homepage as below :
 
 Enter valid numerical values in all 6 input boxes and hit Predict.This will give you the predicted output 
 
