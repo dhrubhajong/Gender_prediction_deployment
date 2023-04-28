@@ -1,0 +1,6 @@
+# For any changes made in the file to update the same in github
+
+git commit -am "Update request.py" #request.py is a file name 
+git status # check the status 
+git push origin main # to push the updated file 
+Note: -am : {add and modify} abbreviation of  -am
