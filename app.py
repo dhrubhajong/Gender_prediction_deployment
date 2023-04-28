@@ -1,5 +1,6 @@
 import numpy as np
 import requests
+from flask import request
 import pickle
 from flask import Flask,jsonify,render_template
 
@@ -16,13 +17,19 @@ def index():
 @app.route('/predict',methods=['POST'])
 def predict():
     
-    float_features=[float(x) for x in requests.form.values()]
+    float_features=[float(x) for x in request.form.values()]
     ''' For rendering results on HTML GUI '''
     final_features=[np.array(float_features)]
     prediction=model.predict(final_features)
-    output=prediction[0]
+
+    # Convert the prediction to a string
+    if prediction[0] == 1:
+        output = 'Male'
+    else:
+        output = 'Female'
+    # output=prediction[0]
     
-    return render_template('index.html',prediction_text='It is a ${}'.format(output))
+    return render_template('index.html',prediction_text='The predicted Gender is {}'.format(output))
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
