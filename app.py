@@ -27,7 +27,6 @@ def predict():
         output = 'Male'
     else:
         output = 'Female'
-    # output=prediction[0]
     
     return render_template('index.html',prediction_text='The predicted Gender is {}'.format(output))
 
